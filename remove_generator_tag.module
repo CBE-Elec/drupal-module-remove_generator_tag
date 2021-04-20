@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains remove_generator_tag.module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function remove_generator_tag_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the remove_generator_tag module.
+    case 'help.page.remove_generator_tag':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Supprime le Meta Tag Generator par défaut de Drupal') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function remove_generator_tag_page_attachments_alter(array &$attachments) {
+  foreach ($attachments['#attached']['html_head'] as $key => $attachment) {
+    if ($attachment[1] == 'system_meta_generator') {
+      unset($attachments['#attached']['html_head'][$key]);
+      }
+    }
+  }
+
+
