@@ -1,0 +1,13 @@
+{
+    "name": "aquarius/remove_generator_tag",
+    "description": "Remove the metag Generator on each page",
+    "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "Cyril Béguet",
+            "email": "webmaster.beguet@free.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
